@@ -1,4 +1,4 @@
-#!/Users/martinjauma/Documents/CODIGO/ETLJson/env/bin/python
+#!/Users/martinjauma/Documents/CODIGO/ETLJson/env/bin/python3
 # -*- coding: utf-8 -*-
 import re
 import sys
