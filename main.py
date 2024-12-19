@@ -47,13 +47,9 @@ def page_1():
 
             initial_data.rename(columns={"index": "row_name"}, inplace=True)
 
-            # Mostrar la tabla editable
+            # Mostrar la tabla editable usando `st.dataframe`
             st.subheader("Tabla editable generada desde el JSON")
-            edited_table = st.data_editor(
-                initial_data,
-                use_container_width=True,
-                key="editable_table"
-            )
+            edited_table = st.dataframe(initial_data)
 
             # Botón para guardar la tabla editada como JSON
             if st.button("Guardar Tabla como JSON"):
