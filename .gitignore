@@ -1,4 +1,9 @@
+# Entornos virtuales
 .venv/
-env/
+
+# Archivos temporales de Python
 __pycache__/
+*.pyc
+
+# Salidas generadas
 output/
