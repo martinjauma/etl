@@ -1,4 +1,6 @@
+#main.py
 import streamlit as st
+from PIL import Image
 import json
 import os
 import pandas as pd
@@ -7,6 +9,24 @@ from modules.utils import load_json, load_csv_to_table, validate_data_against_js
 # Configuración del directorio de salida
 output_directory = './output'
 os.makedirs(output_directory, exist_ok=True)
+
+
+# Función para cargar y mostrar una imagen
+def page_image():
+    st.title("Página de Imágenes")
+
+    uploaded_file = st.file_uploader("Sube tu imagen", type=["jpg", "jpeg", "png"])
+
+    if uploaded_file:
+        try:
+            # Abrir la imagen con Pillow
+            image = Image.open(uploaded_file)
+
+            # Mostrar la imagen en la aplicación Streamlit
+            st.image(image, caption="Imagen subida", use_column_width=True)
+
+        except Exception as e:
+            st.error(f"Error al cargar la imagen: {e}")
 
 # Función para la primera página
 def page_1():
